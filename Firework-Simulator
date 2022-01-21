@@ -1,0 +1,34 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Firework Simulator", "Serpent")
+
+local MainTab = Window:NewTab("Main")
+
+local MainSection = MainTab:NewSection("Main")
+
+MainSection:NewButton("Free Money", "gives you 100b money plus the money you had!", function()
+    local ohNumber1 = game:GetService("Players").LocalPlayer.leaderstats.Cash.Value + 10000000000000
+    workspace.AddMoneyD:FireServer(ohNumber1)
+end)
+
+MainSection:NewButton("Free Rebirths", "gives you 100b rebirths plus the rebirths you had!", function()
+    local ohNumber2 = 10000000000000
+    workspace.AddRebirth:FireServer(ohNumber2)
+end)
+
+MainSection:NewButton("Drop All Firework(SYN X ONLY)", "drops all the firework in your inventory!", function()
+    for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+        if v.Name ~= "Lighter" and v.Name ~= "LocalScript" then
+            game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(v)
+            mouse1click()
+            wait(0.5)
+        end
+    end
+end)
+
+MainSection:NewButton("Reset", "resets your character!", function()
+    local oldCframe = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+    game:GetService("Players").LocalPlayer.Character:BreakJoints()
+    wait(6.5)
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = oldCframe
+end)
