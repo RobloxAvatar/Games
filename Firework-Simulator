@@ -16,7 +16,7 @@ MainSection:NewButton("Free Rebirths", "gives you 100b rebirths plus the rebirth
     workspace.AddRebirth:FireServer(ohNumber2)
 end)
 
-MainSection:NewButton("Drop All Firework(SYN X ONLY)", "drops all the firework in your inventory!", function()
+MainSection:NewButton("Drop All Firework(SYN X AND KRNL ONLY)", "drops all the firework in your inventory!", function()
     for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
         if v.Name ~= "Lighter" and v.Name ~= "LocalScript" then
             game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(v)
