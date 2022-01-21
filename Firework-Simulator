@@ -6,14 +6,20 @@ local MainTab = Window:NewTab("Main")
 
 local MainSection = MainTab:NewSection("Main")
 
-MainSection:NewButton("Free Money", "gives you 100b money plus the money you had!", function()
-    local ohNumber1 = game:GetService("Players").LocalPlayer.leaderstats.Cash.Value + 10000000000000
-    workspace.AddMoneyD:FireServer(ohNumber1)
+MainSection:NewButton("Free Money", "gives you free money plus the money you had!", function()
+    for i = 1,100 do
+       local ohNumber1 = game:GetService("Players").LocalPlayer.leaderstats.Cash.Value + 10000000000000
+       workspace.AddMoneyD:FireServer(ohNumber1)
+       wait(0.05)
+    end
 end)
 
-MainSection:NewButton("Free Rebirths", "gives you 100b rebirths plus the rebirths you had!", function()
-    local ohNumber2 = 10000000000000
-    workspace.AddRebirth:FireServer(ohNumber2)
+MainSection:NewButton("Free Rebirths", "gives you free rebirths plus the rebirths you had!", function()
+    for i = 1,100 do
+       local ohNumber2 = 10000000000000
+       workspace.AddRebirth:FireServer(ohNumber2)
+       wait(0.05)
+    end
 end)
 
 MainSection:NewButton("Drop All Firework(SYN X AND KRNL ONLY)", "drops all the firework in your inventory!", function()
